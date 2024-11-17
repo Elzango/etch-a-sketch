@@ -9,10 +9,10 @@
 .slider1
 {
 	-webkit-appearance: none;
-	width: 100%;
+	width: 70%;
 	height: 25px;
 	border-radius: 5px;
-	background: #d3d3d3;
+	background: #55efc4; /* Accent color for slider */
 	opacity: 0.7;
 	transition: opacity 0.2s;
 	appearance: none;
@@ -34,32 +34,102 @@
 	height: 25px;
 	border-radius: 50%;
 	cursor: pointer;
-	background: #000000;
+	background: #222222;
 }
 
 .slider1::-moz-range-thumb
 {
 	width: 25px;
 	height:25px;
-	background: #000000;
 	border-radius: 50%;
 	cursor: pointer;
+	background: #222222; /* Darker thumb color */
 }
 
 .grid-container
 {
-	display: grid;
-	width: 100%;
-	height: 100vh;
-	gap: 1px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 2px;
+	--columns: 1;
+	width: 750px;
+	height: 750px;
+	border: 2px solid #55efc4; /* Optional border for visibility */
+	background-color: #3b3e47;
+	box-sizing: border-box; /* Includes border in width/height */
+	margin: 5% 0;
+}
 
+body 
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #2c2f33;
+	color: #f2f2f2;
+	align-items: center;
+	min-height: 100vh; /* Full viewport height */
+	margin: 0;
 }
 
 .box
 {
-	background-color: lightblue;
+	background-color: #fafafa;
 	display: flex;
+	flex: 1 1 calc(100% / var(--columns) - 2px);
 	justify-content: center;
-	border-radius: 50%;
+	align-items: center;
+	border-radius: 2px;
 	aspect-ratio: 1 / 1;
+}
+
+.controlsContainer button 
+{
+	background-color: #55efc4; /* Accent color for buttons */
+	color: #222222; /* Dark text color on buttons */
+	border: none;
+	padding: 12px 25px;
+	margin: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.controlsContainer 
+{
+	display: flex;
+	justify-content: space-between;
+	gap: 10px; /* Space between buttons */
+	margin-top: 10px;
+}
+
+.controlsContainer button:hover {
+    background-color: #222222; /* Dark background on hover */
+    color: #55efc4; /* Light text color on hover */
+}
+
+button
+{
+	background-color: #3498db; /* Muted blue */
+	color: #f2f2f2;
+	border: none;
+	border-radius: 5px;
+	padding: 30px 30px;
+	margin: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+}
+
+button:hover 
+{
+	background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Edge buttons rounded */
+button:first-child,
+button:last-child 
+{
+	border-radius: 50%; /* Rounded edges for first and last buttons */
 }
